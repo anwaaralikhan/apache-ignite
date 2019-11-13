@@ -7,6 +7,9 @@
 # Server Node, Client Node
 # Tools DB Veaver
 # Jdbc, Cache API, Spring Data
+# Transaction (Spring vs Ignite)
+# Performance Benchmarks
+
 
 
 Ignite™ is a memory-centric distributed database, caching, and processing platform for
