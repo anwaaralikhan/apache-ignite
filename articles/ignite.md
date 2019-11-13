@@ -11,7 +11,7 @@
 # Performance Benchmarks
 
 
-
+As application development is leading towards more real time solutions, the need for tools, frameworks is becoming 
 Ignite™ is a memory-centric distributed database, caching, and processing platform for
 transactional, analytical, and streaming workloads delivering in-memory speeds at petabyte scale
 
