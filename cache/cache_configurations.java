@@ -1,12 +1,31 @@
+/***
+* 
+* Using IgniteConfiguration class we are able to configure all available Ignite’s node settings. 
+* The most important thing here is a cache configuration 
+* (1). We should add primary key and entity classes as an indexed types 
+*        ccfg2.setIndexedTypes(Long.class, Contact.class); // (1)
+* (2). Then we have to enable export cache updates to database 
+*        ccfg2.setWriteBehindEnabled(true); // (2)
+* (3) and read data not found in a cache from database 
+*        ccfg2.setWriteThrough(true); // (2)
+* (4). The interaction between Ignite’s node and Database may be configured using CacheJdbcPojoStoreFactory class 
+*        ccfg2.setReadThrough(true); // (3)
+* (5). We should pass there DataSource @Bean 
+*        CacheJdbcPojoStoreFactory<Long, Contact> f2 = new CacheJdbcPojoStoreFactory<>(); //5
+* (6), dialect 
+* (7) and mapping between object fields and table columns 
+* (8).
+***/
+
 @Bean
 public Ignite igniteInstance() {
    IgniteConfiguration cfg = new IgniteConfiguration();
    cfg.setIgniteInstanceName("ignite-1");
    cfg.setPeerClassLoadingEnabled(true);
  
-   CacheConfiguration<Long, Contact> ccfg2 = new CacheConfiguration<>("ContactCache"); // (1)
-   ccfg2.setIndexedTypes(Long.class, Contact.class); // (2)
-   ccfg2.setWriteBehindEnabled(true);
+   CacheConfiguration<Long, Contact> ccfg2 = new CacheConfiguration<>("ContactCache"); 
+   ccfg2.setIndexedTypes(Long.class, Contact.class); // (1)
+   ccfg2.setWriteBehindEnabled(true); // (2)
    ccfg2.setWriteThrough(true); // (3)
    ccfg2.setReadThrough(true); // (4)
    CacheJdbcPojoStoreFactory<Long, Contact> f2 = new CacheJdbcPojoStoreFactory<>(); // (5)
