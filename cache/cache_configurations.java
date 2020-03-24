@@ -10,10 +10,13 @@
 *        ccfg2.setWriteThrough(true); // (2)
 * (4). The interaction between Ignite’s node and Database may be configured using CacheJdbcPojoStoreFactory class 
 *        ccfg2.setReadThrough(true); // (3)
-* (5). We should pass there DataSource @Bean 
 *        CacheJdbcPojoStoreFactory<Long, Contact> f2 = new CacheJdbcPojoStoreFactory<>(); //5
+* (5). We should pass there DataSource @Bean 
+*         f2.setDataSource(datasource);
 * (6), dialect 
+*        f2.setDialect(new MySQLDialect()); 
 * (7) and mapping between object fields and table columns 
+*        JdbcType jdbcContactType = new JdbcType();
 * (8).
 ***/
 
