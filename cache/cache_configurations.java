@@ -1,5 +1,7 @@
 /***
 * 
+* https://piotrminkowski.com/2017/11/13/in-memory-data-grid-with-apache-ignite/
+*
 * Using IgniteConfiguration class we are able to configure all available Ignite’s node settings. 
 * The most important thing here is a cache configuration 
 * (1). We should add primary key and entity classes as an indexed types 
