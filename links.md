@@ -6,3 +6,7 @@ https://www.gridgain.com/sites/default/files/technical-presentations/Distributed
 # Memory Usage
 (VVIP) https://apacheignite.readme.io/docs/capacity-planning#calculating-memory-usage
 https://apacheignite.readme.io/docs/memory-configuration#section-example
+
+
+# Grid Gain Good Learning
+https://www.youtube.com/watch?v=hrnrsIkCnI0
